@@ -31,13 +31,13 @@ public class GoogleSearchPage {
 		driver.get("http://google.com/");
 	}
 
-	@When("^I search for \"([^\"]*)\"$")
+	@When("I search for \"([^\"]*)\"$")
 	public void search(String query) {
 		searchField.sendKeys(query);
 		searchButton.click();
 	}
 
-	@Then("^I should see$")
+	@Then("I should see$")
 	public void shouldSee(String results) {
 		assertThat(divResult.getText(), containsString(results));
 	}
